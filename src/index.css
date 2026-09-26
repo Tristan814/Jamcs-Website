@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  font-family: "Inter", Arial, sans-serif;
+  color: #1f2937;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #ffffff;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.container-ja {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 76px 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #d71920;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: #d71920;
+}
+
+.btn-red {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: #d71920;
+  color: white;
+  border: 1px solid #d71920;
+  border-radius: 7px;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.btn-red:hover {
+  background: #b9141a;
+  border-color: #b9141a;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #d71920;
+  background: white;
+  border: 1px solid #d71920;
+  border-radius: 7px;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: #fff4f4;
+}
+
+.card-image {
+  transition: transform 0.35s ease;
+}
+
+.image-card:hover .card-image {
+  transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+  .container-ja {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+}

@@ -1,13 +1,20 @@
+
+import { Link } from 'react-router-dom';
+
 export default function Logo({ light = false }) {
   return (
-    <div className="flex items-center gap-2.5">
-      <div className="flex h-9 w-9 items-center justify-center rounded-sm bg-ja-red text-lg font-extrabold text-white">
+    <Link to="/" className="flex items-center gap-3" aria-label="JA Consultancy & Training – Home">
+      <span className="flex h-11 w-11 items-center justify-center rounded-md bg-brand font-serif text-lg font-bold text-white" aria-hidden="true">
         JA
-      </div>
-      <div className={`leading-tight ${light ? "text-white" : "text-ja-dark"}`}>
-        <div className="text-[15px] font800 font-extrabold">JA Management</div>
-        <div className="text-[10px] font-medium opacity-80">Consultancy Services</div>
-      </div>
-    </div>
+      </span>
+      <span className="leading-tight">
+        <span className={`block font-serif text-lg font-bold ${light ? 'text-white' : 'text-ink'}`}>
+          JA Consultancy
+        </span>
+        <span className={`block text-[11px] font-semibold uppercase tracking-[0.2em] ${light ? 'text-slate-400' : 'text-ink-soft'}`}>
+          &amp; Training
+        </span>
+      </span>
+    </Link>
   );
 }

@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -112,5 +112,47 @@ select {
 
   .section {
     padding: 56px 0;
+  }
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white font-sans text-ink antialiased; }
+  h1, h2 { @apply font-serif; }
+  h3 { @apply font-semibold; }
+  section[id] { scroll-margin-top: 5rem; }
+  :focus-visible { outline: 2px solid #C8102E; outline-offset: 3px; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .section { @apply py-20 md:py-24; }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-semibold transition-colors duration-200;
+  }
+  .btn-primary { @apply btn bg-brand text-white hover:bg-brand-dark; }
+  .btn-outline { @apply btn border border-ink/20 bg-white text-ink hover:border-brand hover:text-brand; }
+  .btn-light { @apply btn bg-white text-brand hover:bg-brand-light; }
+  .btn-ghost-light { @apply btn border border-white/50 text-white hover:bg-white/10; }
+
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-card-hover;
+  }
+
+  .skip-link {
+    @apply absolute left-4 top-4 z-[100] -translate-y-24 rounded bg-brand px-4 py-2 text-sm font-semibold text-white focus:translate-y-0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }
